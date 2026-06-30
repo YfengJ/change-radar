@@ -1,6 +1,6 @@
 # Change Radar
 
-Change Radar is a Codex skill for safer AI-assisted coding. It makes an agent map the blast radius, touched contracts, hidden risk, and verification evidence before it changes code or claims that work is done.
+Change Radar is a Codex skill and dependency-free scanner for safer AI-assisted coding. It makes an agent map the blast radius, risk score, touched contracts, hidden risk, test plan, CI gate, and verification evidence before it changes code or claims that work is done.
 
 AI coding is fast. Change Radar is the seatbelt.
 
@@ -11,9 +11,11 @@ Modern coding agents are very good at producing patches, but the expensive failu
 Change Radar gives the agent a repeatable engineering ritual:
 
 - Build a concise change brief.
-- Sweep the repository for changed files, project signals, and risk cues.
+- Sweep the repository for changed files, project signals, risk cues, and missing-test gaps.
+- Score the change as P0/P1/P2/P3 with a normalized risk score.
 - Map affected contracts.
-- Select tests that actually prove the change.
+- Select tests that actually prove the change, grouped by static/focused/broad/manual checks.
+- Emit JSON or fail CI when a change crosses a configured risk threshold.
 - Audit completion requirement by requirement.
 
 ## Install
@@ -49,6 +51,7 @@ change-radar/
 ├── agents/openai.yaml
 ├── scripts/change_radar.py
 └── references/
+    ├── ci-usage.md
     ├── risk-taxonomy.md
     └── test-selection.md
 ```
@@ -59,15 +62,35 @@ The bundled scanner is dependency-free Python:
 python3 change-radar/scripts/change_radar.py --repo /path/to/project
 ```
 
+It can also emit JSON for automation:
+
+```bash
+python3 change-radar/scripts/change_radar.py --repo /path/to/project --format json
+```
+
+And it can act as a CI gate:
+
+```bash
+python3 change-radar/scripts/change_radar.py --repo /path/to/project --fail-on-risk P1
+```
+
 It reports:
 
 - Changed files from git diff, staged changes, and untracked files.
 - Common project manifests.
-- Risk cues for dependencies, CI, migrations, auth, APIs, UI, generated files, and docs.
+- P0/P1/P2/P3 risk level and 0-100 risk score.
+- Risk cues for dependencies, CI, migrations, auth, APIs, executable source, UI, generated files, docs, and high-signal diff content.
+- Added-line detection for possible secrets, focused tests, skipped tests, and TODO markers.
+- Inferred contract map and concrete recommended actions.
 - Nearby test files by naming convention.
-- Suggested verification commands from project manifests.
+- Blocking evidence gaps such as changed production files without nearby tests.
+- Suggested verification commands from project manifests, grouped by purpose.
 
-See [examples/change-radar-report.md](examples/change-radar-report.md) for sample output.
+See [examples/change-radar-report.md](examples/change-radar-report.md) and [examples/change-radar-report.json](examples/change-radar-report.json) for sample output.
+
+See [change-radar/references/ci-usage.md](change-radar/references/ci-usage.md) for GitHub Actions usage.
+
+For safe fixtures that intentionally contain detector examples, add `change-radar: ignore-risk` on the same added line. Use this sparingly; the scanner treats it as an explicit reviewer-facing assertion that the line is safe.
 
 ## Good Fit
 
@@ -83,7 +106,7 @@ Use Change Radar for:
 
 ## Not A Replacement For Judgment
 
-The scanner is deliberately heuristic. Its job is to wake the agent up, not to decide for it. The skill tells the agent to label inferred contracts, choose verification based on actual risk, and be honest when evidence is missing.
+The scanner is deliberately heuristic. Its job is to wake the agent up, not to decide for it. The skill tells the agent to label inferred contracts, resolve or acknowledge blocking gaps, choose verification based on actual risk, and be honest when evidence is missing.
 
 ## License
 

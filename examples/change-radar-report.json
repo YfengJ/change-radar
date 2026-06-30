@@ -1,0 +1,33 @@
+{
+  "blocking_gaps": [],
+  "changed_files": [
+    "package.json",
+    "src/auth/session.ts",
+    "src/api/checkout.ts",
+    "src/api/checkout.test.ts"
+  ],
+  "overall_risk": "P0",
+  "risk_labels": [
+    "Dependencies changed",
+    "Public API or integration changed",
+    "Auth, security, or money path changed",
+    "Executable source changed",
+    "Tests changed"
+  ],
+  "risk_score": 100,
+  "verification_plan": {
+    "broad": [
+      "pnpm run build"
+    ],
+    "focused": [
+      "pnpm run test"
+    ],
+    "manual": [
+      "Review abuse cases, least privilege, duplicate submission, and failure safety."
+    ],
+    "static": [
+      "pnpm run typecheck",
+      "pnpm run lint"
+    ]
+  }
+}

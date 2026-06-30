@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile Python
+        run: python3 -m py_compile change-radar/scripts/change_radar.py tests/test_change_radar.py
+      - name: Run tests
+        run: python3 -m unittest discover -s tests
+      - name: Smoke-test Change Radar JSON output
+        run: python3 change-radar/scripts/change_radar.py --repo . --format json --output /tmp/change-radar-report.json
+      - name: Smoke-test Change Radar Markdown output
+        run: python3 change-radar/scripts/change_radar.py --repo . --output /tmp/change-radar-report.md

@@ -28,6 +28,7 @@ Use this reference to turn a risk map into a verification plan. Prefer evidence 
 - Unit tests do not prove integration boundaries.
 - Manual checks do not prevent regressions unless they are documented or converted into tests.
 - Generated clients or schemas need regeneration checks, not just source tests.
+- A `change-radar: ignore-risk` marker is not verification; it only explains why a detector fixture is safe.
 
 ## When To Add Tests
 

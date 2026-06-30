@@ -24,6 +24,8 @@ Risk level is about blast radius and reversibility, not file count.
 - UI or accessibility: verify loading, empty, error, disabled, keyboard, small viewport, and screen reader relevant states.
 - Performance-sensitive code: verify algorithmic complexity, query count, payload size, and hot-path allocations.
 - Generated artifacts: verify source-of-truth regeneration and avoid hand-edited generated files unless expected.
+- Possible secrets in added lines: remove the secret, rotate it if real, or prove it is a safe fixture.
+- Focused or skipped tests in added lines: remove `.only` and justify or restore skipped coverage.
 
 ## Contract Questions
 
@@ -45,3 +47,4 @@ Escalate the verification plan when any of these are true:
 - Existing tests do not exercise the touched contract.
 - The implementation relies on undocumented behavior.
 - A rollback would require data repair or user communication.
+- The diff appears to add credentials, focused tests, or skipped tests.
