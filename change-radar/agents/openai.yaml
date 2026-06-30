@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Radar"
+  short_description: "Risk and test radar for code changes"
+  default_prompt: "Use $change-radar to map the blast radius, risks, and verification plan before changing this code."
