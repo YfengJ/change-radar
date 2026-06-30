@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Change Radar CI gate</title>
+  <desc id="desc">A diagram showing Change Radar producing JSON artifacts and CI exit codes for pull requests.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 14; }
+      .dark { fill: #0f172a; }
+      .head { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+      .headLight { font: 700 16px Arial, sans-serif; fill: #ffffff; }
+      .body { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .bodyLight { font: 400 13px Arial, sans-serif; fill: #dbeafe; }
+      .line { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .good { fill: #16a34a; }
+      .bad { fill: #dc2626; }
+    </style>
+  </defs>
+  <rect width="960" height="360" fill="#f8fafc"/>
+  <text class="title" x="48" y="46">Use the same radar in local coding and CI</text>
+  <text class="subtitle" x="48" y="74">Markdown is for humans. JSON and exit codes are for automation.</text>
+
+  <rect class="box" x="60" y="130" width="140" height="92"/>
+  <text class="head" x="86" y="164">PR diff</text>
+  <text class="body" x="86" y="190">changed files</text>
+  <text class="body" x="86" y="210">added lines</text>
+
+  <rect class="dark" x="260" y="118" width="180" height="116" rx="16"/>
+  <text class="headLight" x="286" y="154">change_radar.py</text>
+  <text class="bodyLight" x="286" y="182">--format json</text>
+  <text class="bodyLight" x="286" y="204">--fail-on-risk P1</text>
+
+  <rect class="box" x="500" y="86" width="170" height="92"/>
+  <text class="head" x="526" y="120">JSON artifact</text>
+  <text class="body" x="526" y="146">risk score</text>
+  <text class="body" x="526" y="166">verification plan</text>
+
+  <rect class="box" x="500" y="218" width="170" height="92"/>
+  <text class="head" x="526" y="252">Risk gate</text>
+  <text class="body" x="526" y="278">threshold check</text>
+  <text class="body" x="526" y="298">exit code policy</text>
+
+  <rect class="bad" x="742" y="116" width="150" height="76" rx="16"/>
+  <text class="headLight" x="773" y="149">Exit 3</text>
+  <text class="bodyLight" x="773" y="172">review required</text>
+
+  <rect class="good" x="742" y="220" width="150" height="76" rx="16"/>
+  <text class="headLight" x="773" y="253">Exit 0</text>
+  <text class="bodyLight" x="773" y="276">continue CI</text>
+
+  <path class="line" d="M 200 176 L 252 176"/>
+  <path class="line" d="M 440 158 L 492 132"/>
+  <path class="line" d="M 440 198 L 492 258"/>
+  <path class="line" d="M 670 264 L 734 258"/>
+  <path class="line" d="M 670 264 C 706 226 706 186 734 154"/>
+</svg>

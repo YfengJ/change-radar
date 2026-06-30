@@ -1,4 +1,6 @@
 interface:
   display_name: "Change Radar"
   short_description: "Risk score and CI gate for code changes"
+  icon_small: "./assets/change-radar-small.svg"
+  icon_large: "./assets/change-radar-large.svg"
   default_prompt: "Use $change-radar to score this code change, map affected contracts, and produce a verification plan before editing."

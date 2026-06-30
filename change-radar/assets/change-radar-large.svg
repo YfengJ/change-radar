@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Change Radar logo</title>
+  <desc id="desc">A logo showing a radar sweep beside the Change Radar wordmark and value proposition.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#164e63"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#67e8f9" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="360" rx="32" fill="url(#panel)"/>
+  <g transform="translate(74 42)">
+    <circle cx="138" cy="138" r="118" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="9"/>
+    <circle cx="138" cy="138" r="78" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="7"/>
+    <circle cx="138" cy="138" r="34" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="6"/>
+    <path d="M138 138 L242 54 A146 146 0 0 1 258 154 Z" fill="url(#beam)"/>
+    <line x1="138" y1="138" x2="242" y2="54" stroke="#67e8f9" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="138" cy="138" r="12" fill="#ffffff"/>
+    <circle cx="206" cy="96" r="13" fill="#f59e0b"/>
+    <circle cx="92" cy="188" r="13" fill="#ef4444"/>
+    <circle cx="172" cy="216" r="13" fill="#22c55e"/>
+  </g>
+  <text x="360" y="126" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#ffffff">Change Radar</text>
+  <text x="363" y="168" font-family="Arial, sans-serif" font-size="20" fill="#bae6fd">Risk score, verification plan, and CI gate for AI coding.</text>
+  <rect x="364" y="210" width="93" height="34" rx="17" fill="#dc2626"/>
+  <text x="392" y="233" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">P0</text>
+  <rect x="474" y="210" width="93" height="34" rx="17" fill="#f59e0b"/>
+  <text x="502" y="233" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">P1</text>
+  <rect x="584" y="210" width="93" height="34" rx="17" fill="#2563eb"/>
+  <text x="612" y="233" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">P2</text>
+  <rect x="694" y="210" width="93" height="34" rx="17" fill="#16a34a"/>
+  <text x="722" y="233" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">P3</text>
+  <text x="365" y="285" font-family="Arial, sans-serif" font-size="16" fill="#e0f2fe">From patch generation to evidence-driven handoff.</text>
+</svg>

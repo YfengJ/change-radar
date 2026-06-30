@@ -1,0 +1,10 @@
+flowchart LR
+    PR["Pull request diff"] --> Report["change_radar.py<br/>--format json"]
+    Report --> Artifact["Report artifact<br/>risk, contracts, plan"]
+    Report --> Gate["change_radar.py<br/>--fail-on-risk"]
+    Gate --> Decision{"Risk threshold met?"}
+    Decision -->|"yes"| Block["Exit 3<br/>block or require review"]
+    Decision -->|"no"| Pass["Exit 0<br/>continue CI"]
+    Artifact --> Reviewer["Agent or reviewer<br/>uses verification plan"]
+    Block --> Reviewer
+    Pass --> Reviewer

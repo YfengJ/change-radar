@@ -4,6 +4,22 @@ Change Radar is a Codex skill and dependency-free scanner for safer AI-assisted 
 
 AI coding is fast. Change Radar is the seatbelt.
 
+## Visual Overview
+
+<p align="center">
+  <img src="docs/assets/change-radar-overview.svg" alt="Change Radar workflow" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/assets/risk-ladder.svg" alt="Change Radar risk ladder" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/assets/ci-gate.svg" alt="Change Radar CI gate" width="900">
+</p>
+
+Editable Mermaid sources live in [docs/diagrams](docs/diagrams).
+
 ## Why This Matters
 
 Modern coding agents are very good at producing patches, but the expensive failures usually happen around the patch: missed contracts, weak test selection, accidental scope drift, migrations, auth paths, deployment files, generated artifacts, and vague final answers.

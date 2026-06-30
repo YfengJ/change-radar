@@ -10,6 +10,8 @@ AI coding is fast. Change Radar is the seatbelt.
 
 Change Radar is a Codex skill and zero-dependency scanner that makes AI agents map blast radius, risk score, touched contracts, hidden risk, verification plan, and CI gates before changing code or declaring work done.
 
+The repo now includes visual diagrams for the agent workflow, risk ladder, and CI gate.
+
 ## X / Twitter
 
 I made Change Radar, a Codex skill for safer AI-assisted coding.

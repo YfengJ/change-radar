@@ -1,0 +1,12 @@
+flowchart LR
+    Request["User request<br/>or PR diff"] --> Brief["Change brief<br/>scope and assumptions"]
+    Brief --> Sweep["Radar sweep<br/>files, cues, tests"]
+    Sweep --> Engine["Risk engine<br/>score, contracts, gaps"]
+    Engine --> Plan["Verification plan<br/>static, focused, broad, manual"]
+    Plan --> Handoff["Evidence handoff<br/>run, justify, report"]
+
+    Engine --> Gate{"Risk gate"}
+    Gate -->|"P0/P1"| Review["Human review<br/>or CI block"]
+    Gate -->|"P2/P3"| Continue["Proceed with<br/>focused checks"]
+    Review --> Plan
+    Continue --> Plan

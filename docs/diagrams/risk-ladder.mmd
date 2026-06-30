@@ -1,0 +1,14 @@
+flowchart TB
+    P0["P0<br/>Production hazard<br/>auth, payments, persistence, secrets"]
+    P1["P1<br/>Contract risk<br/>API, CI, deployment, dependencies"]
+    P2["P2<br/>Local runtime risk<br/>source or UI behavior"]
+    P3["P3<br/>Low runtime risk<br/>docs, tests, examples"]
+
+    P0 --> P1 --> P2 --> P3
+
+    Score["Risk score<br/>0-100"]
+    Cues["Risk cues<br/>paths and added lines"]
+    Gaps["Blocking gaps<br/>missing evidence"]
+    Score --> P0
+    Cues --> P1
+    Gaps --> P0

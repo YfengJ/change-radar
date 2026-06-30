@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+  <title id="title">Change Radar risk ladder</title>
+  <desc id="desc">A four-level risk ladder from P0 production hazards to P3 low runtime risk.</desc>
+  <style>
+    .title { font: 700 28px Arial, sans-serif; fill: #0f172a; }
+    .subtitle { font: 400 15px Arial, sans-serif; fill: #475569; }
+    .level { font: 700 24px Arial, sans-serif; fill: #ffffff; }
+    .head { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+    .body { font: 400 13px Arial, sans-serif; fill: #334155; }
+    .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 12; }
+  </style>
+  <rect width="960" height="330" fill="#f8fafc"/>
+  <text class="title" x="48" y="46">Risk score that says what changed, not just how many tests ran</text>
+  <text class="subtitle" x="48" y="74">Change Radar combines path cues, added-line cues, missing evidence, and project commands.</text>
+
+  <rect x="60" y="116" width="185" height="112" rx="18" fill="#dc2626"/>
+  <text class="level" x="86" y="154">P0</text>
+  <text x="86" y="183" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Production hazard</text>
+  <text x="86" y="207" font-family="Arial, sans-serif" font-size="13" fill="#fee2e2">auth, payments, data, secrets</text>
+
+  <rect x="278" y="116" width="185" height="112" rx="18" fill="#f59e0b"/>
+  <text class="level" x="304" y="154">P1</text>
+  <text x="304" y="183" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#111827">Contract risk</text>
+  <text x="304" y="207" font-family="Arial, sans-serif" font-size="13" fill="#422006">API, CI, deploy, dependencies</text>
+
+  <rect x="496" y="116" width="185" height="112" rx="18" fill="#2563eb"/>
+  <text class="level" x="522" y="154">P2</text>
+  <text x="522" y="183" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Local runtime risk</text>
+  <text x="522" y="207" font-family="Arial, sans-serif" font-size="13" fill="#dbeafe">source, UI, generated artifacts</text>
+
+  <rect x="714" y="116" width="185" height="112" rx="18" fill="#16a34a"/>
+  <text class="level" x="740" y="154">P3</text>
+  <text x="740" y="183" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Low runtime risk</text>
+  <text x="740" y="207" font-family="Arial, sans-serif" font-size="13" fill="#dcfce7">docs, tests, examples</text>
+
+  <rect class="card" x="184" y="260" width="592" height="46"/>
+  <text class="head" x="210" y="289">Gate options:</text>
+  <text class="body" x="316" y="289">P0 for serious hazards, P1 for strict review, P2/P3 for experimental policies.</text>
+</svg>

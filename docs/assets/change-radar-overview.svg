@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Change Radar workflow</title>
+  <desc id="desc">A diagram showing a code request moving through brief, radar sweep, risk engine, verification plan, and evidence handoff.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e8f3f8"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px Arial, sans-serif; fill: #475569; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 14; }
+      .head { font: 700 17px Arial, sans-serif; fill: #0f172a; }
+      .body { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .tag { font: 700 12px Arial, sans-serif; fill: #ffffff; }
+      .line { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="960" height="380" fill="url(#bg)"/>
+  <text class="title" x="48" y="48">Change Radar turns a fast patch into evidence</text>
+  <text class="subtitle" x="48" y="76">The skill makes an agent slow down at the parts where AI coding usually fails.</text>
+
+  <rect class="box" x="48" y="122" width="150" height="142"/>
+  <rect x="68" y="102" width="86" height="28" rx="14" fill="#0f766e"/>
+  <text class="tag" x="85" y="121">INPUT</text>
+  <text class="head" x="70" y="154">Request</text>
+  <text class="body" x="70" y="182">User goal</text>
+  <text class="body" x="70" y="204">Repo state</text>
+  <text class="body" x="70" y="226">Diff base</text>
+
+  <rect class="box" x="240" y="122" width="150" height="142"/>
+  <rect x="260" y="102" width="86" height="28" rx="14" fill="#2563eb"/>
+  <text class="tag" x="281" y="121">SCAN</text>
+  <text class="head" x="262" y="154">Radar Sweep</text>
+  <text class="body" x="262" y="182">Changed files</text>
+  <text class="body" x="262" y="204">Risk cues</text>
+  <text class="body" x="262" y="226">Nearby tests</text>
+
+  <rect class="box" x="432" y="122" width="150" height="142"/>
+  <rect x="452" y="102" width="86" height="28" rx="14" fill="#b45309"/>
+  <text class="tag" x="474" y="121">SCORE</text>
+  <text class="head" x="454" y="154">Risk Engine</text>
+  <text class="body" x="454" y="182">P0-P3 level</text>
+  <text class="body" x="454" y="204">Contracts</text>
+  <text class="body" x="454" y="226">Blocking gaps</text>
+
+  <rect class="box" x="624" y="122" width="150" height="142"/>
+  <rect x="644" y="102" width="86" height="28" rx="14" fill="#7c3aed"/>
+  <text class="tag" x="664" y="121">PROVE</text>
+  <text class="head" x="646" y="154">Verification</text>
+  <text class="body" x="646" y="182">Static checks</text>
+  <text class="body" x="646" y="204">Focused tests</text>
+  <text class="body" x="646" y="226">Manual evidence</text>
+
+  <rect class="box" x="804" y="122" width="108" height="142"/>
+  <rect x="824" y="102" width="68" height="28" rx="14" fill="#dc2626"/>
+  <text class="tag" x="840" y="121">SHIP</text>
+  <text class="head" x="826" y="154">Handoff</text>
+  <text class="body" x="826" y="182">JSON</text>
+  <text class="body" x="826" y="204">CI gate</text>
+  <text class="body" x="826" y="226">Final proof</text>
+
+  <path class="line" d="M 198 193 L 232 193"/>
+  <path class="line" d="M 390 193 L 424 193"/>
+  <path class="line" d="M 582 193 L 616 193"/>
+  <path class="line" d="M 774 193 L 796 193"/>
+
+  <rect x="246" y="300" width="468" height="42" rx="21" fill="#0f172a"/>
+  <text x="290" y="326" font-family="Arial, sans-serif" font-size="15" fill="#ffffff">Agent answer changes from "tests passed" to "here is the evidence."</text>
+</svg>
